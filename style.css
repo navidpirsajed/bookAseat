@@ -1,0 +1,35 @@
+*{
+    background-color: #202124;
+    color: aliceblue;
+    padding: 0;
+    margin: 0;
+}
+div{
+    border: solid white 1px;
+
+}
+body{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    flex-direction: column;
+}
+
+/* Classes */
+.header{
+    display: flex;
+    justify-content: center;
+}
+
+.main{
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: row;
+}
+
+/* ID */
+#planePNG{
+    width: 600px;
+    height: 1500px;
+    /* height: 50%; */
+}
