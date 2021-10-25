@@ -1,35 +1,71 @@
-*{
-    background-color: #202124;
-    color: aliceblue;
-    padding: 0;
-    margin: 0;
+* {
+  background-color: #202124;
+  color: aliceblue;
+  padding: 0;
+  margin: 0;
 }
-div{
-    border: solid white 1px;
-
+div {
+  border: solid white 1px;
 }
-body{
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    flex-direction: column;
+body {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  flex-direction: column;
 }
 
 /* Classes */
-.header{
-    display: flex;
-    justify-content: center;
+.header {
+  display: flex;
+  justify-content: center;
 }
 
-.main{
-    display: flex;
-    /* justify-content: center; */
-    flex-direction: row;
+.main {
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.bookTicket {
+  /* width: 100%; */
+}
+
+.plane {
+  position: relative;
 }
 
 /* ID */
-#planePNG{
-    width: 600px;
-    height: 1500px;
-    /* height: 50%; */
+#planePNG {
+  /* position: relative;
+    top: 0;
+    left: 0; */
+  position: absolute;
+  width: 600px;
+  /* height: ; */
+  /* height: 50%; */
+}
+
+.seatPNG {
+  background-color: transparent;
+}
+
+#seats {
+  background-color: transparent;
+  top: 0;
+  left: 100px;
+  display: flex;
+  position: absolute;
+}
+
+.sectionA {
+  background-color: transparent;
+}
+
+#sectionB {
+  background-color: transparent;
+}
+
+#sectionC {
+  background-color: transparent;
 }
