@@ -4,9 +4,15 @@
   padding: 0;
   margin: 0;
 }
+
+html {
+  background-color: #202124;
+  /* background-image: linear-gradient(300deg, #000000 0%, #474747 100%); */
+}
 div {
   /* border: solid white 1px; */
 }
+
 body {
   display: flex;
   justify-content: center;
@@ -19,6 +25,19 @@ body {
 .header {
   display: flex;
   justify-content: center;
+  background-color: #19191a;
+  border-bottom: solid white 1px;
+  box-shadow: 3.4px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    8.1px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    15.3px 12.5px 10px rgba(0, 0, 0, 0.035),
+    27.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+    51px 41.8px 33.4px rgba(0, ]0, 0, 0.05), 122px 100px 80px rgba(0, 0, 0, 0.07);
+}
+.header h1{
+  font-family: 'Open Sans', sans-serif;
+  /* font-style: italic; */
+  font-size: 2.3em;
+  background-color: transparent;
 }
 
 .main {
@@ -33,6 +52,19 @@ body {
   /* width: 100%; */
 }
 
+.secAPrice {
+  background-color: transparent;
+  color: #455e58;
+}
+.secBPrice {
+  background-color: transparent;
+  color: #12444b;
+}
+.secCPrice {
+  background-color: transparent;
+  color: #245441;
+}
+
 .plane {
   /* display: flex;
   position: relative;
@@ -42,15 +74,15 @@ body {
   width: 100%;
 }
 
-.plane h1{
+.plane h1 {
   font-size: 50px;
   margin-right: 1170px;
   margin-top: 104px;
   position: absolute;
   width: 400px;
   z-index: 1;
-  background-color: #797b84;
-  color: #202124;
+  background-color: #19191a;
+  color: #e6e6e5;
 }
 
 /* ID */
@@ -60,7 +92,12 @@ body {
   margin-top: 100px;
   border: 1px white solid;
   border-radius: 10px;
-  background-color: #797b84;
+  background-color: #19191a;
+  box-shadow: 3.4px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    8.1px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    15.3px 12.5px 10px rgba(0, 0, 0, 0.035),
+    27.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+    51px 41.8px 33.4px rgba(0, 0, 0, 0.05), 122px 100px 80px rgba(0, 0, 0, 0.07); /* box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); */
 }
 #seats {
   position: absolute;
@@ -88,11 +125,11 @@ td {
   color: #202124;
 }
 #seatSectionA th:hover {
-  -webkit-transition: all 500ms ease;
-  -moz-transition: all 500ms ease;
-  -ms-transition: all 500ms ease;
-  -o-transition: all 500ms ease;
-  transition: all 500ms ease;
+  -webkit-transition: all 00ms ease;
+  -moz-transition: all 00ms ease;
+  -ms-transition: all 00ms ease;
+  -o-transition: all 00ms ease;
+  transition: all 00ms ease;
   filter: brightness(125%);
 }
 
@@ -111,14 +148,13 @@ td {
   border: 1px white solid;
   background-color: #edbbb4;
   color: #202124;
-
 }
 #seatSectionB th:hover {
-  -webkit-transition: all 500ms ease;
-  -moz-transition: all 500ms ease;
-  -ms-transition: all 500ms ease;
-  -o-transition: all 500ms ease;
-  transition: all 500ms ease;
+  -webkit-transition: all 00ms ease;
+  -moz-transition: all 00ms ease;
+  -ms-transition: all 00ms ease;
+  -o-transition: all 00ms ease;
+  transition: all 00ms ease;
   filter: brightness(125%);
 }
 
@@ -134,19 +170,21 @@ td {
   background-color: #dbabbe;
   border: 1px white solid;
   color: #202124;
-
 }
 #seatSectionC th:hover {
-  -webkit-transition: all 500ms ease;
-  -moz-transition: all 500ms ease;
-  -ms-transition: all 500ms ease;
-  -o-transition: all 500ms ease;
-  transition: all 500ms ease;
+  -webkit-transition: all 00ms ease;
+  -moz-transition: all 00ms ease;
+  -ms-transition: all 00ms ease;
+  -o-transition: all 00ms ease;
+  transition: all 00ms ease;
   /* background-color: #303134; */
   filter: brightness(125%);
-
 }
 
+#x1{
+  /* color: red; */
+  font-style: italic;
+}
 /* 
 #seatSectionA #sectionB {
   background-color: transparent;
