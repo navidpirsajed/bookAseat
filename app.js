@@ -137,30 +137,26 @@ var plane = {
 };
 
 function populateSeatPrice() {
+  let temp = (
+    Math.random() * (sectionAPriceMax - sectionAPriceMin) +
+    sectionAPriceMin
+  ).toFixed(2);
   for (let i = 0; i < plane.seats.sectionA.length; i++) {
-    plane.seats.sectionA[i].price = (
-      Math.random() * (sectionAPriceMax - sectionAPriceMin) +
-      sectionAPriceMin
-    ).toFixed(2);
+    plane.seats.sectionA[i].price = temp;
     console.log("seat A" + i + ": $" + plane.seats.sectionA[i].price);
   }
   console.log("");
   for (var i = 0; i < plane.seats.sectionB.length; i++) {
-    plane.seats.sectionB[i].price = (
-      Math.random() * (sectionBPriceMax - sectionBPriceMin) +
-      sectionBPriceMin
-    ).toFixed(2);
+    plane.seats.sectionB[i].price = temp;
     console.log("seat B" + i + ": $" + plane.seats.sectionB[i].price);
   }
   console.log("");
   for (var i = 0; i < plane.seats.sectionA.length; i++) {
-    plane.seats.sectionC[i].price = (
-      Math.random() * (sectionCPriceMax - sectionCPriceMin) +
-      sectionCPriceMin
-    ).toFixed(2);
+    plane.seats.sectionC[i].price = temp;
     console.log("seat C" + i + ": $" + plane.seats.sectionC[i].price);
   }
 }
+
 function updatePriceElements() {
   for (let i = 0; i < plane.seats.sectionA.length; i++) {
     sectionAPriceElements[i].innerHTML = `${
@@ -216,69 +212,75 @@ function loadPriceElements() {
 }
 
 function updatePriceFontColor() {
-  let temp = [];
-  let tempSorted = [];
-  let red = 255;
-  let green = 0;
-
-  // sorts temp by first member value
-  for (let i = 0; i < plane.seats.sectionA.length; i++) {
-    temp.push([plane.seats.sectionA[i].price, plane.seats.sectionA[i].name]);
+  //   let temp = [];
+  //   let tempSorted = [];
+  //   let red = 255;
+  //   let green = 0;
+  //   // sorts temp by first member value
+  //   for (let i = 0; i < plane.seats.sectionA.length; i++) {
+  //     temp.push([plane.seats.sectionA[i].price, plane.seats.sectionA[i].name]);
+  //   }
+  //   tempSorted = temp.sort((a, b) => {
+  //     return b[0] - a[0];
+  //   });
+  //   red = 255;
+  //   green = 0;
+  //   for (let i = 0; i < tempSorted.length; i++) {
+  //     sectionAPriceValueElement[
+  //       parseInt(tempSorted[i][1].charAt(1)) - 1
+  //     ].style.color = `RGB(${red},${green},0)`;
+  //     red -= 51;
+  //     green += 51;
+  //     // console.log((tempSorted[i][1]).charAt(1) - 1);
+  //   }
+  //   temp = [];
+  //   for (let i = 0; i < plane.seats.sectionB.length; i++) {
+  //     temp.push([plane.seats.sectionB[i].price, plane.seats.sectionB[i].name]);
+  //   }
+  //   tempSorted = temp.sort((a, b) => {
+  //     return b[0] - a[0];
+  //   });
+  //   red = 255;
+  //   green = 0;
+  //   for (let i = 0; i < tempSorted.length; i++) {
+  //     sectionBPriceValueElement[
+  //       parseInt(tempSorted[i][1].charAt(1)) - 1
+  //     ].style.color = `RGB(${red},${green},0)`;
+  //     red -= 51;
+  //     green += 51;
+  //     console.log(
+  //       sectionBPriceValueElement[parseInt(tempSorted[i][1].charAt(1)) - 1]
+  //     );
+  //     // console.log((tempSorted[i][1]).charAt(1) - 1);
+  //   }
+  //   temp = [];
+  //   for (let i = 0; i < plane.seats.sectionC.length; i++) {
+  //     temp.push([plane.seats.sectionC[i].price, plane.seats.sectionC[i].name]);
+  //   }
+  //   tempSorted = temp.sort((a, b) => {
+  //     return b[0] - a[0];
+  //   });
+  //   red = 255;
+  //   green = 0;
+  //   for (let i = 0; i < tempSorted.length; i++) {
+  //     sectionCPriceValueElement[
+  //       parseInt(tempSorted[i][1].charAt(1)) - 1
+  //     ].style.color = `RGB(${red},${green},0)`;
+  //     red -= 51;
+  //     green += 51;
+  //     console.log(
+  //       sectionCPriceValueElement[parseInt(tempSorted[i][1].charAt(1)) - 1]
+  //     );
+  //     // console.log((tempSorted[i][1]).charAt(1) - 1);
+  //     }
+  for (let i = 0; i < sectionAPriceElements.length; i++) {
+    sectionAPriceValueElement[i].style.color = "#455e58";
   }
-  tempSorted = temp.sort((a, b) => {
-    return b[0] - a[0];
-  });
-  red = 255;
-  green = 0;
-  for (let i = 0; i < tempSorted.length; i++) {
-    sectionAPriceValueElement[
-      parseInt(tempSorted[i][1].charAt(1)) - 1
-    ].style.color = `RGB(${red},${green},0)`;
-    red -= 51;
-    green += 51;
-    // console.log((tempSorted[i][1]).charAt(1) - 1);
+  for (let i = 0; i < sectionBPriceElements.length; i++) {
+    sectionBPriceValueElement[i].style.color = "#12444b";
   }
-
-  temp = [];
-  for (let i = 0; i < plane.seats.sectionB.length; i++) {
-    temp.push([plane.seats.sectionB[i].price, plane.seats.sectionB[i].name]);
-  }
-  tempSorted = temp.sort((a, b) => {
-    return b[0] - a[0];
-  });
-  red = 255;
-  green = 0;
-  for (let i = 0; i < tempSorted.length; i++) {
-    sectionBPriceValueElement[
-      parseInt(tempSorted[i][1].charAt(1)) - 1
-    ].style.color = `RGB(${red},${green},0)`;
-    red -= 51;
-    green += 51;
-    console.log(
-      sectionBPriceValueElement[parseInt(tempSorted[i][1].charAt(1)) - 1]
-    );
-    // console.log((tempSorted[i][1]).charAt(1) - 1);
-  }
-
-  temp = [];
-  for (let i = 0; i < plane.seats.sectionC.length; i++) {
-    temp.push([plane.seats.sectionC[i].price, plane.seats.sectionC[i].name]);
-  }
-  tempSorted = temp.sort((a, b) => {
-    return b[0] - a[0];
-  });
-  red = 255;
-  green = 0;
-  for (let i = 0; i < tempSorted.length; i++) {
-    sectionCPriceValueElement[
-      parseInt(tempSorted[i][1].charAt(1)) - 1
-    ].style.color = `RGB(${red},${green},0)`;
-    red -= 51;
-    green += 51;
-    console.log(
-      sectionCPriceValueElement[parseInt(tempSorted[i][1].charAt(1)) - 1]
-    );
-    // console.log((tempSorted[i][1]).charAt(1) - 1);
+  for (let i = 0; i < sectionCPriceElements.length; i++) {
+    sectionCPriceValueElement[i].style.color = "#245441";
   }
   // temp = [];
   // for (let i = 0; i < plane.seats.sectionC.length; i++) {
@@ -298,18 +300,20 @@ function updatePriceFontColor() {
   //   // console.log((tempSorted[i][1]).charAt(1) - 1);
   // }
   // console.log(tempSorted);
-
   //   sectionAPriceValueElement[0].style.color = "black";
   // document.getElementById("A1seatPriceValue").style.color = 'red'
 }
+// seatClicked(arg){
+
+// }
 
 console.log("howdy");
+
 populateSeatPrice();
 updatePriceElements();
 loadPriceElements();
 updatePriceFontColor();
 
-console.log("sadasa");
 // console.log(sectionAPriceValueElement[0]);
 // sectionBPriceValueElement[1].style.color = 'blue'
 
