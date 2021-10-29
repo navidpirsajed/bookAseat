@@ -1,6 +1,7 @@
 * {
   /* background-color: #19191a; */
-  background-color: #202124;
+  /* background-color: red; */
+  /* background-color: #202124; */
   color: aliceblue;
   padding: 0;
   margin: 0;
@@ -15,7 +16,7 @@ div {
 }
 
 body {
-  display: flex;
+  display: flexbox;
   justify-content: center;
   /* height: 100%; */
   width: 100%;
@@ -24,25 +25,56 @@ body {
 }
 
 .main {
-  margin-top: 15px;
+  padding-top: 100px;
+  /* margin-top: 150px; */
 }
 /* Classes */
 .header {
-  padding-top: 15px;
+  /* margin-top: -100 */
+  /* padding: env(safe-area-inset-top) 0 0 env(safe-area-inset-left); */
+/* height: 100px; */
+  /* padding: 50px 0 10px 0; */
   /* margin-top: -15px; */
   position: fixed;
   z-index: 100;
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   justify-content: center;
   background-color: #19191a;
   border-bottom: solid white 1px;
-  box-shadow: 3.4px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  /* box-shadow: 3.4px 2.8px 2.2px rgba(0, 0, 0, 0.02),
     8.1px 6.7px 5.3px rgba(0, 0, 0, 0.028),
     15.3px 12.5px 10px rgba(0, 0, 0, 0.035),
     27.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
     51px 41.8px 33.4px rgba(0, ]0, 0, 0.05),
-    122px 100px 80px rgba(0, 0, 0, 0.07);
+    122px 100px 80px rgba(0, 0, 0, 0.07); */
+    width: 100%;
+}
+
+.headerr {
+  justify-content: center;
+  z-index: 1000;
+  /* margin-bottom: 1574px; */
+  position: fixed;
+  /* white-space: nowrap; */
+  background-color: red;
+  /* display: flex; */
+  /* margin: 0 auto; */
+  /* padding-left: 50%; */
+  /* padding-right: 50%; */
+  /* width: 50%; */
+  /* justify-items: center; */
+  
+}
+.headerr h1 {
+  background-color: violet;
+  /* margin: 40%; */
+  /* width: 50%; */
+}
+.headerr * {
+  /* margin: 0 auto; */
+
+  display: inline;
 }
 
 .header h1 {
@@ -53,6 +85,7 @@ body {
 }
 
 .main {
+  /* margin-top: 50px; */
   /* display: flex; */
   /* justify-content: center; */
   /* flex-direction: row; */
@@ -85,13 +118,14 @@ body {
 .plane {
   /* transform: rotate(90deg); */
   /* display: flex;
-  position: relative;
   width: 100%; */
   /* transform: scale(0.54); */
+  /* position: fixed; */
   display: flex;
   justify-content: center;
   /* width: 90%; */
-  margin-top: 50px;
+  /* top: 100px; */
+  /* margin-top: 100px; */
 }
 
 .plane h1 {
@@ -107,7 +141,7 @@ body {
 
 /* ID */
 #planePNG {
-  position: absolute;
+  position: relative;
   /* width: 1600px; */
   /* margin-top: 100px; */
   border: 1px white solid;
@@ -117,7 +151,7 @@ body {
     8.1px 6.7px 5.3px rgba(0, 0, 0, 0.028),
     15.3px 12.5px 10px rgba(0, 0, 0, 0.035),
     27.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
-    51px 41.8px 33.4px rgba(0, 0, 0, 0.05), 122px 100px 80px rgba(0, 0, 0, 0.07); /* box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); */
+    51px 41.8px 33.4px rgba(0, 0, 0, 0.05), 122px 100px 80px rgba(0, 0, 0, 0.07);
 }
 #seats {
   position: absolute;
