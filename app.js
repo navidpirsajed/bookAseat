@@ -31,6 +31,9 @@ const sectionCPriceElements = [
   document.getElementById("C5seat"),
   document.getElementById("C6seat"),
 ];
+var sectionAPriceValueElement = [];
+var sectionBPriceValueElement = [];
+var sectionCPriceValueElement = [];
 
 var plane = {
   seats: {
@@ -133,33 +136,6 @@ var plane = {
   },
 };
 
-function updatePriceElements() {
-  for (let i = 0; i < plane.seats.sectionA.length; i++) {
-    sectionAPriceElements[i].innerHTML =
-      sectionAPriceElements[i].innerHTML +
-      "<br>" +
-      "<p class='secAPrice'>$" +
-      plane.seats.sectionA[i].price +
-      "</p>";
-    }
-    for (let i = 0; i < plane.seats.sectionB.length; i++) {
-        sectionBPriceElements[i].innerHTML =
-          sectionBPriceElements[i].innerHTML +
-          "<br>" +
-          "<p class='secBPrice'>$" +
-          plane.seats.sectionB[i].price +
-          "</p>";
-    }
-    for (let i = 0; i < plane.seats.sectionC.length; i++) {
-        sectionCPriceElements[i].innerHTML =
-          sectionCPriceElements[i].innerHTML +
-          "<br>" +
-          "<p class='secCPrice'>$" +
-          plane.seats.sectionC[i].price +
-          "</p>";
-      }
-}
-
 function populateSeatPrice() {
   for (let i = 0; i < plane.seats.sectionA.length; i++) {
     plane.seats.sectionA[i].price = (
@@ -184,12 +160,159 @@ function populateSeatPrice() {
     ).toFixed(2);
     console.log("seat C" + i + ": $" + plane.seats.sectionC[i].price);
   }
-  updatePriceElements();
+}
+function updatePriceElements() {
+  for (let i = 0; i < plane.seats.sectionA.length; i++) {
+    sectionAPriceElements[i].innerHTML = `${
+      sectionAPriceElements[i].innerHTML
+    }<br><p class='secAPrice'><p class='transparent' id='A${
+      i + 1
+    }seatPriceValue'>$${plane.seats.sectionA[i].price}</p></p>`;
+  }
+
+  for (let i = 0; i < plane.seats.sectionB.length; i++) {
+    sectionBPriceElements[i].innerHTML = `${
+      sectionBPriceElements[i].innerHTML
+    }<br><p class='secBPrice'><p class='transparent' id='B${
+      i + 1
+    }seatPriceValue'>$${plane.seats.sectionB[i].price}</p></p>`;
+    console.log(sectionBPriceElements[i]);
+  }
+
+  for (let i = 0; i < plane.seats.sectionC.length; i++) {
+    sectionCPriceElements[i].innerHTML = `${
+      sectionCPriceElements[i].innerHTML
+    }<br><p class='secCPrice'><p class='transparent' id='C${
+      i + 1
+    }seatPriceValue'>$${plane.seats.sectionC[i].price}</p></p>`;
+  }
+}
+
+function loadPriceElements() {
+  sectionAPriceValueElement = [
+    document.getElementById("A1seatPriceValue"),
+    document.getElementById("A2seatPriceValue"),
+    document.getElementById("A3seatPriceValue"),
+    document.getElementById("A4seatPriceValue"),
+    document.getElementById("A5seatPriceValue"),
+    document.getElementById("A6seatPriceValue"),
+  ];
+  sectionBPriceValueElement = [
+    document.getElementById("B1seatPriceValue"),
+    document.getElementById("B2seatPriceValue"),
+    document.getElementById("B3seatPriceValue"),
+    document.getElementById("B4seatPriceValue"),
+    document.getElementById("B5seatPriceValue"),
+    document.getElementById("B6seatPriceValue"),
+  ];
+  sectionCPriceValueElement = [
+    document.getElementById("C1seatPriceValue"),
+    document.getElementById("C2seatPriceValue"),
+    document.getElementById("C3seatPriceValue"),
+    document.getElementById("C4seatPriceValue"),
+    document.getElementById("C5seatPriceValue"),
+    document.getElementById("C6seatPriceValue"),
+  ];
+}
+
+function updatePriceFontColor() {
+  let temp = [];
+  let tempSorted = [];
+  let red = 255;
+  let green = 0;
+
+  // sorts temp by first member value
+  for (let i = 0; i < plane.seats.sectionA.length; i++) {
+    temp.push([plane.seats.sectionA[i].price, plane.seats.sectionA[i].name]);
+  }
+  tempSorted = temp.sort((a, b) => {
+    return b[0] - a[0];
+  });
+  red = 255;
+  green = 0;
+  for (let i = 0; i < tempSorted.length; i++) {
+    sectionAPriceValueElement[
+      parseInt(tempSorted[i][1].charAt(1)) - 1
+    ].style.color = `RGB(${red},${green},0)`;
+    red -= 51;
+    green += 51;
+    // console.log((tempSorted[i][1]).charAt(1) - 1);
+  }
+
+  temp = [];
+  for (let i = 0; i < plane.seats.sectionB.length; i++) {
+    temp.push([plane.seats.sectionB[i].price, plane.seats.sectionB[i].name]);
+  }
+  tempSorted = temp.sort((a, b) => {
+    return b[0] - a[0];
+  });
+  red = 255;
+  green = 0;
+  for (let i = 0; i < tempSorted.length; i++) {
+    sectionBPriceValueElement[
+      parseInt(tempSorted[i][1].charAt(1)) - 1
+    ].style.color = `RGB(${red},${green},0)`;
+    red -= 51;
+    green += 51;
+    console.log(
+      sectionBPriceValueElement[parseInt(tempSorted[i][1].charAt(1)) - 1]
+    );
+    // console.log((tempSorted[i][1]).charAt(1) - 1);
+  }
+
+  temp = [];
+  for (let i = 0; i < plane.seats.sectionC.length; i++) {
+    temp.push([plane.seats.sectionC[i].price, plane.seats.sectionC[i].name]);
+  }
+  tempSorted = temp.sort((a, b) => {
+    return b[0] - a[0];
+  });
+  red = 255;
+  green = 0;
+  for (let i = 0; i < tempSorted.length; i++) {
+    sectionCPriceValueElement[
+      parseInt(tempSorted[i][1].charAt(1)) - 1
+    ].style.color = `RGB(${red},${green},0)`;
+    red -= 51;
+    green += 51;
+    console.log(
+      sectionCPriceValueElement[parseInt(tempSorted[i][1].charAt(1)) - 1]
+    );
+    // console.log((tempSorted[i][1]).charAt(1) - 1);
+  }
+  // temp = [];
+  // for (let i = 0; i < plane.seats.sectionC.length; i++) {
+  //   temp.push([plane.seats.sectionC[i].price, plane.seats.sectionC[i].name]);
+  // }
+  // tempSorted = temp.sort((a, b) => {
+  //   return b[0] - a[0];
+  // });
+  // red = 255;
+  // green = 0;
+  // for (let i = 0; i < tmpSorted.length; i++) {
+  //   sectionCPriceValueElement[
+  //     parseInt(tempSorted[i][1].charAt(1)) - 1
+  //   ].style.color = `RGB(${red},${green},0)`;
+  //   red -= 51;
+  //   green += 51;
+  //   // console.log((tempSorted[i][1]).charAt(1) - 1);
+  // }
+  // console.log(tempSorted);
+
+  //   sectionAPriceValueElement[0].style.color = "black";
+  // document.getElementById("A1seatPriceValue").style.color = 'red'
 }
 
 console.log("howdy");
 populateSeatPrice();
+updatePriceElements();
+loadPriceElements();
+updatePriceFontColor();
+
+console.log("sadasa");
+// console.log(sectionAPriceValueElement[0]);
+// sectionBPriceValueElement[1].style.color = 'blue'
 
 // console.log(seatA1elm.innerHTML);
 // sectionAPriceElements[1].innerHTML =
-//   sectionAPriceElements[1].innerHTML + "<br>" + "test";
+//   sectionAPriceElements[1].innerHTML + "<br>" + "test"

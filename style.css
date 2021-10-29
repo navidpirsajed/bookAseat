@@ -1,4 +1,5 @@
 * {
+  /* background-color: #19191a; */
   background-color: #202124;
   color: aliceblue;
   padding: 0;
@@ -16,13 +17,22 @@ div {
 body {
   display: flex;
   justify-content: center;
-  height: 100%;
+  /* height: 100%; */
+  width: 100%;
   flex-direction: column;
-  min-width: 1688px;
+  /* min-width: 1688px; */
 }
 
+.main {
+  margin-top: 15px;
+}
 /* Classes */
 .header {
+  padding-top: 15px;
+  /* margin-top: -15px; */
+  position: fixed;
+  z-index: 100;
+  width: 100%;
   display: flex;
   justify-content: center;
   background-color: #19191a;
@@ -31,10 +41,12 @@ body {
     8.1px 6.7px 5.3px rgba(0, 0, 0, 0.028),
     15.3px 12.5px 10px rgba(0, 0, 0, 0.035),
     27.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
-    51px 41.8px 33.4px rgba(0, ]0, 0, 0.05), 122px 100px 80px rgba(0, 0, 0, 0.07);
+    51px 41.8px 33.4px rgba(0, ]0, 0, 0.05),
+    122px 100px 80px rgba(0, 0, 0, 0.07);
 }
-.header h1{
-  font-family: 'Open Sans', sans-serif;
+
+.header h1 {
+  font-family: "Open Sans", sans-serif;
   /* font-style: italic; */
   font-size: 2.3em;
   background-color: transparent;
@@ -52,8 +64,13 @@ body {
   /* width: 100%; */
 }
 
+.transparent {
+  background-color: transparent;
+}
+
 .secAPrice {
   background-color: transparent;
+  /* color: red; */
   color: #455e58;
 }
 .secBPrice {
@@ -66,12 +83,15 @@ body {
 }
 
 .plane {
+  /* transform: rotate(90deg); */
   /* display: flex;
   position: relative;
   width: 100%; */
+  /* transform: scale(0.54); */
   display: flex;
   justify-content: center;
-  width: 100%;
+  /* width: 90%; */
+  margin-top: 50px;
 }
 
 .plane h1 {
@@ -88,8 +108,8 @@ body {
 /* ID */
 #planePNG {
   position: absolute;
-  width: 1600px;
-  margin-top: 100px;
+  /* width: 1600px; */
+  /* margin-top: 100px; */
   border: 1px white solid;
   border-radius: 10px;
   background-color: #19191a;
@@ -102,17 +122,22 @@ body {
 #seats {
   position: absolute;
   display: flex;
-  margin: 319px 302px 0 0;
-  height: 132px;
-  width: 725px;
+  flex-direction: column;
+  /* margin: 319px 302px 0 0; */
+  /* height: 132px; */
+  /* width: 725px; */
   border: 1px solid white;
+  /* transform: rotate(90deg); */
+  margin: 398px 0px 0px 0px;
+  width: 182px;
+  height: 1000px;
 }
 
 #seatSectionA {
   background-color: blue;
   width: 100%;
   height: 100%;
-  border-right: 1px solid white;
+  border-bottom: 1px solid white;
 }
 #seatSectionA table {
   height: 100%;
@@ -120,9 +145,12 @@ body {
 }
 #seatSectionA th,
 td {
+  height: 33.33%;
+  width: 50%;
   border: 1px white solid;
   background-color: #baa1a7;
-  color: #202124;
+  /* color: white; */
+  color: #455e58;
 }
 #seatSectionA th:hover {
   -webkit-transition: all 00ms ease;
@@ -145,9 +173,11 @@ td {
 }
 #seatSectionB th,
 td {
+  height: 33.33%;
+  width: 50%;
   border: 1px white solid;
   background-color: #edbbb4;
-  color: #202124;
+  color: #12444b;
 }
 #seatSectionB th:hover {
   -webkit-transition: all 00ms ease;
@@ -167,9 +197,11 @@ td {
   width: 100%;
 }
 #seatSectionC th {
+  height: 33.33%;
+  width: 50%;
   background-color: #dbabbe;
   border: 1px white solid;
-  color: #202124;
+  color: #245441;
 }
 #seatSectionC th:hover {
   -webkit-transition: all 00ms ease;
@@ -181,7 +213,7 @@ td {
   filter: brightness(125%);
 }
 
-#x1{
+#x1 {
   /* color: red; */
   font-style: italic;
 }
@@ -193,3 +225,10 @@ td {
 #sectionC {
   background-color: transparent;
 } */
+
+.plane {
+  /* top: 100px; */
+  /* padding-left: 1900px; */
+  /* width: 30%; */
+  /* border: 1px solid white; */
+}
